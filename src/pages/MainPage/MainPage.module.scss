@@ -1,0 +1,41 @@
+.root {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: no-repeat url("../../assets/bg.jpg");
+  background-size: cover, contain;
+
+  .about {
+    margin-right: 2rem;
+    color: #111;
+    font-size: 1.25rem;
+    .btn {
+      margin-top: 1rem;
+      min-width: 100px;
+      font-family: inherit;
+      appearance: none;
+      border: 0;
+      border-radius: 5px;
+      background: rgba(93, 92, 92, 0.3);
+      color: #fff;
+      padding: 8px 16px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      a{
+        font-size: 18px;
+        font-weight: 500;
+        color: #111111;
+        text-decoration: none;
+      }
+      &:hover {
+        background: rgba(93, 92, 92, 0.4);
+      }
+    }
+  }
+
+}
