@@ -6,19 +6,22 @@ import styles from './RegisterPage.module.scss'
 import {useNavigate} from "react-router-dom";
 
 const RegisterPage = () => {
-  const {isLoading, error, userInfo, success} = useSelector((state) => state.user);
+  const {isLoading, error, accessToken, success} = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const {register, handleSubmit} = useForm();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (success) navigate('/login')
-    if (userInfo) navigate('/profile')
-  }, [navigate, userInfo, success])
+    if (accessToken){
+      navigate('/profile', {replace: true})
+      alert("You already logged in")
+    }
+  }, [navigate, accessToken, success])
 
   const submitRegistration = (data) => {
     if (data.password !== data.confirmPassword) {
-      alert('Пароли не совпадают')
+      alert('Passwords do not match!')
       return
     }
     data.email = data.email.toLowerCase()
@@ -26,8 +29,7 @@ const RegisterPage = () => {
   }
   return (
     <form className={styles.root} onSubmit={handleSubmit(submitRegistration)}>
-      {/* render error message with Error component, if any */}
-      {error && <h1>Произошла ошибка</h1>}
+      {error && <h1>{error}</h1>}
       <div className={styles.group}>
         <label htmlFor='email'>Email</label>
         <input

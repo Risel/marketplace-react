@@ -3,10 +3,10 @@ import {useLocation, Navigate} from "react-router-dom";
 import {useSelector} from "react-redux";
 
 const RequireAuth = ({children}) => {
-  const {userInfo} = useSelector((state)=> state.user)
+  const {accessToken} = useSelector((state)=> state.user)
   const location = useLocation()
-  if (!userInfo) {
-    return <Navigate to='/login' state={{from: location}} replace/>
+  if (!accessToken) {
+    return <Navigate to='/login' replace/>
     }
   return children
 };

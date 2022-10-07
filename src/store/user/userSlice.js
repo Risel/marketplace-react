@@ -1,22 +1,37 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {loginUser, registerUser} from "./userActions";
+import { loginUser, registerUser} from "./userActions";
 
-const accessToken = localStorage.getItem('access_token')
-  ? localStorage.getItem('access_token')
+const accessToken = localStorage.getItem('token')
+  ? localStorage.getItem('token')
+  : null
+
+const userEmail = localStorage.getItem('email')
+  ? localStorage.getItem('email')
   : null
 
 const initialState = {
   isLoading: false,
   userInfo: null,
+  userEmail,
   accessToken,
-  error: null,
+  error: '',
   success: false,
 }
 
 const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    logout: (state) => {
+      localStorage.removeItem('token');
+      localStorage.removeItem('email')
+      state.isLoading = false;
+      state.userInfo = null;
+      state.accessToken = null;
+      state.error = null;
+      state.userEmail = null
+    }
+  },
   extraReducers: {
     [registerUser.pending]: (state) => {
       state.loading = true;
@@ -26,7 +41,7 @@ const userSlice = createSlice({
       state.loading = false;
       state.success = true;
     },
-    [registerUser.pending]: (state, {payload}) => {
+    [registerUser.rejected]: (state, {payload}) => {
       state.loading = false;
       state.error = payload
     },
@@ -36,14 +51,15 @@ const userSlice = createSlice({
     },
     [loginUser.fulfilled]: (state, {payload}) => {
       state.loading = false;
-      state.userInfo = payload;
-      state.accessToken = payload.access_token
+      state.userEmail = payload.email;
+      state.accessToken = payload.data.access_token
     },
-    [loginUser.pending]: (state, {payload}) => {
+    [loginUser.rejected]: (state, {payload}) => {
       state.loading = false;
       state.error = payload
     },
   },
 })
 
+export const {logout} = userSlice.actions
 export default userSlice.reducer

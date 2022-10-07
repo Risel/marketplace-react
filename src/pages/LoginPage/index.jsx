@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useLocation, useNavigate} from "react-router-dom";
 import {useSelector, useDispatch} from "react-redux";
 import {useForm} from "react-hook-form";
@@ -6,22 +6,26 @@ import styles from './LoginPage.module.scss'
 import {loginUser} from "../../store/user/userActions";
 
 const LoginPage = () => {
-  const {isLoading, error} = useSelector((state) => state.user)
+  const {isLoading, error, accessToken} = useSelector((state) => state.user)
   const {register, handleSubmit, formState:{errors,isValid}} = useForm()
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const location = useLocation();
+
+  useEffect(() => {
+    if(accessToken){
+      navigate('/profile')
+    }
+  }, [accessToken,navigate]);
+
 
   const submitForm = (data) => {
     dispatch(loginUser(data))
   }
-  const fromPage = location.state?.from?.pathname || '/';
   return (
-    <>
-      {fromPage}
+    <div>
       <form onSubmit={handleSubmit(submitForm)}>
-        {error && <h1>Произошла ошибка...</h1>}
+        {error && <h2>{error}</h2>}
         <div className={styles.form}>
           <label htmlFor='email'>Email</label>
           <input
@@ -44,7 +48,7 @@ const LoginPage = () => {
           Login
         </button>
       </form>
-    </>
+    </div>
   );
 };
 
