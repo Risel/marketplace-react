@@ -9,7 +9,7 @@ const MainPage = () => {
         <h1>Biggest e-commerce website in the world</h1>
         <h2>Want to see our catalog?</h2>
         <button className={styles.btn}>
-          <Link to={'/login'}>Check it out!</Link>
+          <Link to={'/products'}>Check it out!</Link>
         </button>
       </article>
     </main>

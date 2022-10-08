@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import LoginPage from "./pages/LoginPage";
-import CatalogPage from "./pages/CatalogPage";
+import Index from "./pages/CatalogPage";
 import ProfilePage from "./pages/ProfilePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import Header from "./components/Header";
@@ -16,7 +16,7 @@ function App() {
         <Route path='/' element={<MainPage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/register' element={<RegisterPage/>}/>
-        <Route path='/products' element={<CatalogPage/>}/>
+        <Route path='/products' element={<Index/>}/>
         <Route path='/profile' element={<RequireAuth>
           <ProfilePage/>
         </RequireAuth>}/>

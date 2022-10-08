@@ -10,7 +10,6 @@ export const registerUser = createAsyncThunk(
       await axios.post('http://localhost:8000/auth/register', {email, password})
     } catch (error) {
       if (error.response && error.response.data.message) {
-        console.log(error)
         return rejectWithValue(error.response.data.message)
       } else {
         return rejectWithValue(error.message)
