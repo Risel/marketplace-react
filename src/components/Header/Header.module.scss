@@ -1,69 +1,101 @@
+@import "../../scss/variables";
+
 .root {
   width: 100%;
   position: relative;
   background-color: rgba(255, 253, 224);
-  font-family: "Roboto", sans-serif;
   height: 80px;
-  -webkit-box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.6);
-  -moz-box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.6);
-  box-shadow: 0 5px 5px -2px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
-  text-transform: uppercase;
   align-items: center;
-  .catalog {
-    font-size: 20px;
-    position: relative;
-    margin-left: 3rem;
-    a {
-      text-decoration: none;
-      color: #111;
-      &:after {
-        display: block;
-        position: absolute;
-        left: 0;
-        width: 0;
-        height: 1px;
-        background-color: #111;
-        content: "";
-        transition: width 0.2s ease-out;
-      }
-      &:hover:after,
-      :focus:after{
-        width: 100%;
+  padding: 0 2rem;
+  background-color: #3B3B4CFF;
+  color: $color-white;
+  .leftBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .catalog {
+      font-size: 20px;
+      position: relative;
+      a {
+        text-decoration: none;
+        color: $color-white;
+        &:after {
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: $color-white;
+          content: "";
+          transition: width 0.2s ease-out;
+        }
+        &:hover:after,
+        :focus:after{
+          width: 100%;
+        }
       }
     }
-  }
-  .logo {
-    font-size: 40px;
-    font-family: 'Gemunu Libre', sans-serif;
-    a {
-      text-decoration: none;
-      color: #111;
+    .logo {
+      font-size: 40px;
+      margin-right: 3rem;
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color-white;
+      }
     }
   }
   .auth {
     text-align: center;
-    margin-right: 3rem;
     font-size:20px;
+    .button {
+      padding: 0.75rem 1.75rem;
+      border-radius: 15px;
+      margin-right: 20px;
+      border: 1px solid $color-white;
+      background: none;
+      font-size: 16px;
+      transition: all 0.2s ease;
+      &:hover {
+        background-color: rgba(222, 222, 222, 0.05);
+        box-shadow: 0 2px 8px 0 rgba(255, 255, 255, 0.1);
+      }
+      &:active {
+        background-color: rgba(222, 222, 222, 0.1);
+      }
+    }
     a {
       position: relative;
       text-decoration: none;
-      color: #111;
-      &:after {
-        display: block;
-        position: absolute;
-        left: 0;
-        width: 0;
-        height: 1px;
-        background-color: #111;
-        content: "";
-        transition: width 0.2s ease-out;
+      font-size: 1.125rem;
+      color: $color-white;
+    }
+    .logged {
+      color: $color-helper;
+      font-size: 16px;
+      position: relative;
+      .button_red {
+        padding: 0.75rem 1.75rem;
+        border-radius: 15px;
+        margin-right: 20px;
+        border: 1px solid $color-primary;
+        background: $color-primary;
+        color: $color-white;
+        font-size: 16px;
+        transition: all 0.2s ease;
+        margin-left: 1rem;
+        cursor: pointer;
+        &:hover {
+          background-color: rgb(208, 33, 33);
+          box-shadow: 0 2px 8px 0 rgba(255, 255, 255, 0.1);
+        }
+        &:active {
+          background-color: rgba(222, 222, 222, 0.1);
+        }
       }
-      &:hover:after,
-      :focus:after{
-        width: 100%;
-      }
+
     }
   }
 }
