@@ -14,7 +14,11 @@ const ProfilePage = () => {
         <h2>Achievments: </h2>
         <hr/>
         <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et quam ante. Phasellus semper turpis a odio pellentesque commodo. Fusce mollis ante sed nunc dignissim ullamcorper sit amet vitae felis. Duis scelerisque aliquam orci, in vestibulum diam accumsan et. Mauris ac orci rutrum, luctus tellus eu, facilisis mi. Duis blandit mattis rhoncus. Ut pellentesque varius eros, sit amet consequat leo aliquam et. Sed sapien diam, elementum vel nisi sit amet, mattis euismod urna. Suspendisse vestibulum tincidunt justo.</p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et quam ante. Phasellus semper turpis a odio
+          pellentesque commodo. Fusce mollis ante sed nunc dignissim ullamcorper sit amet vitae felis. Duis scelerisque
+          aliquam orci, in vestibulum diam accumsan et. Mauris ac orci rutrum, luctus tellus eu, facilisis mi. Duis
+          blandit mattis rhoncus. Ut pellentesque varius eros, sit amet consequat leo aliquam et. Sed sapien diam,
+          elementum vel nisi sit amet, mattis euismod urna. Suspendisse vestibulum tincidunt justo.</p>
       </div>
     </div>
   );

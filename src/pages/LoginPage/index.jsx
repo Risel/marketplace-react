@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
-import {Link, useLocation, useNavigate} from "react-router-dom";
-import {useSelector, useDispatch} from "react-redux";
+import {Link, useNavigate} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
 import {useForm} from "react-hook-form";
 import styles from './LoginPage.module.scss'
 import {loginUser} from "../../store/user/userActions";
@@ -14,10 +14,10 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if(accessToken){
+    if (accessToken) {
       navigate('/profile')
     }
-  }, [accessToken,navigate]);
+  }, [accessToken, navigate]);
 
 
   const submitForm = (data) => {

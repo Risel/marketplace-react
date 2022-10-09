@@ -26,7 +26,7 @@ const Header = () => {
             ?
             <div className={styles.logged}>
               <div className={styles.logged_burger}></div>
-                <span>Welcome back,</span>
+              <span>Welcome back,</span>
               <Link className={styles.link} to='/profile'> {userEmail}</Link>
               <button className={styles.button_red} onClick={() => dispatch(logout())}>
                 Sign out

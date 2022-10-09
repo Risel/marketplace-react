@@ -9,12 +9,12 @@ import Error from '../../components/Error';
 const RegisterPage = () => {
   const {isLoading, error, accessToken, success} = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  const {register, handleSubmit,reset} = useForm();
+  const {register, handleSubmit, reset} = useForm();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (success) navigate('/login')
-    if (accessToken){
+    if (accessToken) {
       navigate('/profile', {replace: true})
       alert("You already logged in")
     }

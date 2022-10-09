@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
@@ -20,7 +20,7 @@ function App() {
         <Route path='/profile' element={<RequireAuth>
           <ProfilePage/>
         </RequireAuth>}/>
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="*" element={<NotFoundPage/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -10,17 +10,17 @@ const initialState = {
 const productsSlice = createSlice({
   name: 'products',
   initialState,
-  reducers:{},
+  reducers: {},
   extraReducers: {
-    [fetchProducts.pending]:(state) =>{
+    [fetchProducts.pending]: (state) => {
       state.isLoading = true;
       state.error = false;
     },
-    [fetchProducts.fulfilled]:(state, {payload}) =>{
+    [fetchProducts.fulfilled]: (state, {payload}) => {
       state.isLoading = false;
       state.products = payload;
     },
-    [fetchProducts.rejected]:(state, {payload}) =>{
+    [fetchProducts.rejected]: (state, {payload}) => {
       state.isLoading = false;
       state.error = payload;
     },

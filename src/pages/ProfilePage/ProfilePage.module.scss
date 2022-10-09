@@ -5,11 +5,13 @@
   justify-content: space-between;
   align-items: center;
   color: $color-white;
+
   .avatar {
     display: flex;
     justify-content: center;
     width: 50%;
   }
+
   .info {
     width: 50%;
     padding: 0 1rem;

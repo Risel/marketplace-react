@@ -8,8 +8,8 @@ const MainPage = () => {
       <article className={styles.about}>
         <h2>
           Lorem ipsum dolor sit amet, en diam, elementum vel nisi sit amet, mattis euismod urna.
-           Suspendisse vestibulum tincidunt justo.
-           </h2>
+          Suspendisse vestibulum tincidunt justo.
+        </h2>
         <button className={styles.button}>
           <Link to={'/products'}>Check it out!</Link>
         </button>

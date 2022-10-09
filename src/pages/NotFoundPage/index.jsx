@@ -6,7 +6,7 @@ const NotFoundPage = () => {
     <div className={styles.root}>
       <h1>
         <span>😕</span>
-        <br />
+        <br/>
         Ничего не найдено
       </h1>
       <p className={styles.description}>
