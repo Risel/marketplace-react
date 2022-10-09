@@ -3,7 +3,11 @@
 
 
 
-## Run locally
+## Project installation: 
+Test user: 
+Email: nilson@email.com
+Password: nilson
+
 ### Server installation:  
 ```bash
   git clone https://github.com/Risel/marketplace-react.git
