@@ -11,7 +11,7 @@ Password: nilson
 ### Server installation:  
 ```bash
   git clone https://github.com/Risel/marketplace-react.git
-  cd fake-api-jwt-json-server
+  cd server
   npm install
   npm run auth
 ```
